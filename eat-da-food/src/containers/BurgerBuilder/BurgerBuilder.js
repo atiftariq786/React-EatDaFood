@@ -24,7 +24,7 @@ class BurgerBuilder extends Component {
     };
     
     addingIngredientHandler = (type) =>{
-
+        console.log({type})
         const oldCount = this.state.ingredients[type];
         const updatedCount = oldCount +1;
         const updatedIngredients = {
@@ -61,8 +61,10 @@ class BurgerBuilder extends Component {
         const disabledInfo = {
             ...this.state.ingredients
         };
+       // console.log({disabledInfo})
         for ( let key in disabledInfo ) {
             disabledInfo[key] = disabledInfo[key] <= 0
+            //console.log(disabledInfo[key])
         }
         return(
             <Aux>            
