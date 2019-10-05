@@ -29,12 +29,22 @@ const buildControls = (props)=>(
                 added = {() => props.ingredientAdded(ctrl.type)}
                 removed = {()=> props.ingredientRemoved(ctrl.type)}
                 disabled = {props.disabled[ctrl.type]}
-                />
-                
+                />                
             ))}
+            <button className={styles.OrderButton}>ORDER NOW</button>
         
         </div>
 
     
 );
 export default buildControls;
+// Method-3
+const destroyerEs6 =(...arr) => {
+    let arrayList = arr[0];
+
+    arrayList = arrayList.filter((value)=> arr.indexOf(value)=== -1 ? true : false);
+    console.log({arrayList})
+    return arrayList; 
+}  
+    destroyerEs6([1, 2, 5, 1, 2, 3], 2, 3);//Output:[1,4,1]
+
