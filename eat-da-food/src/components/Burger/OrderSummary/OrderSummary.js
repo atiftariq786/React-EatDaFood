@@ -13,7 +13,7 @@ const orderSummary = (props) =>{
     });
         
     return (
-       <Aux>
+        <Aux>
             <h3>Your Order</h3>
             <p>Your Burger following ingredients:</p>
             <ul>
@@ -24,7 +24,7 @@ const orderSummary = (props) =>{
             <Button btnType ="Danger" clicked={props.purchasedCanceled}>CANCEL</Button>
             <Button btnType ="Success" clicked={props.purchasedContinued}>CONTINUE</Button>
             
-       </Aux>
+        </Aux>
     )
 }
 export default orderSummary;
