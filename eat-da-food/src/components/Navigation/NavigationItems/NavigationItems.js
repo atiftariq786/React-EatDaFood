@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./NavigationItems.module.css";
 
 const navigationItems = (props) => (
-    <ul>
-        <li><a href="/">A Link</a></li>
+    <ul className={styles.NavigationItems}>
+          
     </ul>
 );
 export default navigationItems;
