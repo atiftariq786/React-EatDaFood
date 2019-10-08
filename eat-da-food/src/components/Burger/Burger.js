@@ -6,32 +6,32 @@ import BurgerIngredient from "./BurgerIngredient/BurgerIngredien";
 const burger = (props) => { 
     //object convert into an array
     let arrayIngredient =Object.keys(props.ingredients); 
-        console.log({arrayIngredient});
+        //console.log({arrayIngredient});
 
     let transformedIngredients =arrayIngredient.map (igKey => {
-        console.log({igKey});
+        //console.log({igKey});
         //Find the length of ingredient
         let spreadArr = [...Array(props.ingredients[igKey])];
-        console.log({spreadArr});
+        //console.log({spreadArr});
         return spreadArr.map((_,i) => {
-            let temp = igKey +i;
-            console.log({temp})
+            //let temp = igKey +i;
+            //console.log({temp})
             return <BurgerIngredient key={igKey +i} type={igKey} />
         } );
         
     })
-    console.log({transformedIngredients})
+   // console.log({transformedIngredients})
 
     transformedIngredients =transformedIngredients.reduce((arr,el) => {
-        console.log({arr});
-        console.log({el});
+        //console.log({arr});
+        //console.log({el});
 
         let tempR = arr.concat(el);
-        console.log({tempR});
+        //console.log({tempR});
         return tempR;
     },[]);
 
-    console.log({transformedIngredients}, 'after reduce')
+    //console.log({transformedIngredients}, 'after reduce')
     if(transformedIngredients.length === 0){
         transformedIngredients = <p>Please start adding ingredients</p>;
     }
