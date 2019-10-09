@@ -24,7 +24,8 @@ class BurgerBuilder extends Component {
         },
         totalPrice : 4,
         purchasable: false,
-        purchasing : false
+        purchasing : false,
+        loading: false
        
     };
     updatePurchaseState(ingredients){
