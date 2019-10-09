@@ -17,7 +17,7 @@ const withErrorHandler = (WrappedComponent, axios) =>{
                 this.setState({error : error})
             });
         }
-        errorConfirmedHandler(){
+        errorConfirmedHandler =() =>{
             this.setState({error: null})
         }
         render(){
