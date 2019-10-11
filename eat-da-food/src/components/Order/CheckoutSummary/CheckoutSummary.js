@@ -17,4 +17,4 @@ const checkoutSummary = (props) => {
     )
 
 }
-export default checkoutSummary;
+export default checkoutSummary; 
