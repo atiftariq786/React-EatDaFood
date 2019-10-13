@@ -1,11 +1,10 @@
-import React, {Component} from "react";
+import React from "react";
+import styles from "./Order.module.css";
 
-class Order extends Component {
-    render(){
-        return(
-            <div>
-            </div>
-        )
-    }
-}
-export default Order;
+const order = (props)=> (
+    <div>
+        <p>Ingredients: salad (1)</p>
+        <p>Price: <strong>USD 5.45</strong></p>
+    </div>
+);
+export default order;
