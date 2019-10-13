@@ -14,7 +14,7 @@ class Orders extends Component {
         axios.get("orders.json")
         .then(res => {
             console.log(res.data);
-            let fetchedOrders = [];
+            const fetchedOrders = [];
 
             for( let key in res.data){
                 fetchedOrders.push({
@@ -22,7 +22,7 @@ class Orders extends Component {
                     id:key
                 });
             }
-            this.setState({loading:false});
+            this.setState({loading:false, orders: fetchedOrders});
         })
         .catch(err => {
             this.setState({loading:false});
@@ -40,7 +40,7 @@ class Orders extends Component {
             ))}
             
             </div>
-        )
+        );
     }
 }
 export default withErrorHandler(Orders, axios);
