@@ -14,9 +14,10 @@
     background-color: white;
     font: inherit;
     padding: 6px 10px;
-
+    display:block;
+    width:100%;
 }
 .InputElement:focus{
-    outline: none;
-    background-color: #ccc;
+    outline:none;
+    background-color:#ccc;
 }
