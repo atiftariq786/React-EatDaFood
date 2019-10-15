@@ -7,7 +7,7 @@ import Input from "../../../components/UI/Input/Input";
 
 class ContactData extends Component {
     state={
-        orderForm:{           
+        orderForm:{       
                 name : {
                     elementType:"input",
                     elementConfig:{
@@ -84,10 +84,12 @@ class ContactData extends Component {
                             {value:"cheapest", displayValue: "Cheapest"},    
                         ]
                     },
-                    value:""
+                    value:"",
+                    valid: true
                     
                 }
         },
+        formIsValid: false,
         loading : false
     }
     orderHandler = (event) =>{
@@ -143,7 +145,12 @@ class ContactData extends Component {
         updatedFormElement.touched = true;
         console.log(updatedFormElement)
         updatedOrderForm[inputIdentifier] = updatedFormElement;
-        this.setState({orderForm: updatedOrderForm});
+
+        let formIsValid = true;
+        for(let inputIdentifier in updatedOrderForm){
+            formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
+        }
+        this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
     
     }
 
@@ -169,7 +176,7 @@ class ContactData extends Component {
                         shouldValidate={formelement.config.validation }
                         touched = {formelement.config.touched} />
                 ))}              
-                <Button btnType="Success" >ORDER</Button>
+                <Button btnType="Success" disabled={!this.state.formIsValid} >ORDER</Button>
             </form>
                 
         );
