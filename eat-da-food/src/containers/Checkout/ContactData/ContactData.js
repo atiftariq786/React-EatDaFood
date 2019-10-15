@@ -138,7 +138,7 @@ class ContactData extends Component {
         return isValid;
     }
     inputChangedHandler = (event, inputIdentifier) => {
-        //console.log(event.target.value);
+      
         const updatedOrderForm = {
             ...this.state.orderForm
         };
@@ -156,7 +156,6 @@ class ContactData extends Component {
             formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
         }
         this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
-    
     }
 
     render(){ 
@@ -182,8 +181,7 @@ class ContactData extends Component {
                         touched = {formelement.config.touched} />
                 ))}              
                 <Button btnType="Success" disabled={!this.state.formIsValid} >ORDER</Button>
-            </form>
-                
+            </form>      
         );
         if(this.state.loading){
             form = <Spinner />;
@@ -191,8 +189,7 @@ class ContactData extends Component {
         return(
             <div className={styles.ContactData}>
                 <h4>Enter your contact data</h4>
-                {form}
-                
+                {form}                
             </div>
         )
     }

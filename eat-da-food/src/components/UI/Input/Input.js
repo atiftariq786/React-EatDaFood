@@ -44,12 +44,10 @@ const input = (props) =>{
                 {...props.elementConfig}
                 value={props.value}/>
     }
-
     return (
         <div className={styles.Input}>
             <label className={styles.Label}>{props.label}</label>
             {inputElement}
-        
         </div>
     )
 }
