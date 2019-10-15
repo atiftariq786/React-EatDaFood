@@ -8,12 +8,57 @@ import Input from "../../../components/UI/Input/Input";
 class ContactData extends Component {
     state={
         orderForm:{           
-                name : "Atif",                
-                street : "Mission",
-                zipCode : "12345",
-                country: "United State",               
-                email: "testapp@test.com",            
-                deliveryMethod: "fastest"
+                name : {
+                    elementType:"input",
+                    elementConfig:{
+                        type:"text",
+                        placeholder:"Your Name"
+                    },
+                    value:""
+                },                
+                street : {
+                    elementType:"input",
+                    elementConfig:{
+                        type:"text",
+                        placeholder:"Street"
+                    },
+                    value:""
+                },
+                zipCode : {
+                    elementType:"input",
+                    elementConfig:{
+                        type:"text",
+                        placeholder:"Zipcode"
+                    },
+                    value:""
+                },
+                country: {
+                    elementType:"input",
+                    elementConfig:{
+                        type:"text",
+                        placeholder:"Country"
+                    },
+                    value:""
+                },               
+                email: {
+                    elementType:"input",
+                    elementConfig:{
+                        type:"email",
+                        placeholder:"Your E-Mail"
+                    },
+                    value:""
+                },            
+                deliveryMethod: {
+                    elementType:"select",
+                    elementConfig:{
+                        options:[
+                            {value:"fastest", displayValue: "Fastest"},
+                            {value:"cheapest", displayValue: "Cheapest"},
+                            
+                        ]
+                    },
+                    value:""
+                }
         },
         loading : false
     }
