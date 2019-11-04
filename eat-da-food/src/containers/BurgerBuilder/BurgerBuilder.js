@@ -16,7 +16,7 @@ class BurgerBuilder extends Component {
 
     state ={
         //ingredients :null,
-        totalPrice : 4,
+        //totalPrice : 4,
         purchasable: false,
         purchasing : false,
         loading: false,
@@ -88,7 +88,7 @@ class BurgerBuilder extends Component {
                     ingredientAdded  = {this.props.onIngredientsAdded}
                     ingredientRemoved = {this.props.onIngredientsRemove}
                     disabled={disabledInfo}
-                    price={this.state.totalPrice}
+                    price={this.props.price}
                     purchasable = {this.state.purchasable}
                     ordered = {this.purchaseHandler}
                     />
@@ -98,7 +98,7 @@ class BurgerBuilder extends Component {
             ingredients= {this.props.ings}
             purchasedCanceled ={this.purchaseCancelHandler}
             purchasedContinued={this.purchaseContinuedHandler}
-            price={this.state.totalPrice}/>
+            price={this.props.price}/>
         }
         
 
@@ -120,7 +120,8 @@ class BurgerBuilder extends Component {
 } 
 const mapStateToProps = state => {
     return{
-        ings: state.ingredients
+        ings: state.ingredients,
+        price: state.totalPrice
     }
 }
 const mapDispatchToProps = dispatch => {
