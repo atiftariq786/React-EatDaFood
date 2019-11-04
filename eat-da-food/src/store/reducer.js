@@ -1,4 +1,4 @@
-import * as actionType from "./actions";
+import * as actionTypes from "./actions";
 
 
 const initialState ={
@@ -7,6 +7,18 @@ const initialState ={
 }
 
 const reducer = (state = initialState, action) => {
+    switch(action.type){
+        case actionTypes.ADD_INGREDIENT:
+            return{
 
+            };
+        case actionTypes.REMOVE_INGREDIENT:
+            return{
+
+            };
+        default:
+            return state;
+        
+    }
 };
 export default reducer;
