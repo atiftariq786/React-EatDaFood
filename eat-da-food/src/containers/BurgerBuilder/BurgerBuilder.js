@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import { connect } from "react-redux";
+
+
 import Aux from "../../hoc/Aux/Aux";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
@@ -26,6 +29,7 @@ class BurgerBuilder extends Component {
        
     };
     componentDidMount(){
+        /*
         axios.get("https://eat-da-food.firebaseio.com/ingredients.json")
         .then(response => {
            this.setState({ingredients: response.data}); 
@@ -33,6 +37,7 @@ class BurgerBuilder extends Component {
         .catch(error => {
             this.setState({error : true});
         });
+        */
     }
     updatePurchaseState(ingredients){
        
@@ -153,4 +158,15 @@ class BurgerBuilder extends Component {
         )
     }
 } 
+const mapStateToProps = state => {
+    return{
+        ings: state.ingredients
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return{
+
+    }
+}
+
 export default withErrorHandler(BurgerBuilder, axios);
