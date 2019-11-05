@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 
-
 import Aux from "../../hoc/Aux/Aux";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
@@ -15,19 +14,16 @@ import * as actionTypes from "../../store/actions";
 class BurgerBuilder extends Component {
 
     state ={
-        //ingredients :null,
-        //totalPrice : 4,
         purchasable: false,
         purchasing : false,
         loading: false,
         error : false
-       
     };
     componentDidMount(){
         /*
         axios.get("https://eat-da-food.firebaseio.com/ingredients.json")
         .then(response => {
-           this.setState({ingredients: response.data}); 
+        this.setState({ingredients: response.data}); 
         })
         .catch(error => {
             this.setState({error : true});
@@ -35,7 +31,7 @@ class BurgerBuilder extends Component {
         */
     }
     updatePurchaseState(ingredients){
-       
+
         const sum = Object.keys(ingredients)
         .map(igKey => {
             return ingredients[igKey];
@@ -52,10 +48,9 @@ class BurgerBuilder extends Component {
         this.setState({purchasing: false});
     }
     purchaseContinuedHandler =()=>{
-        
+
         this.props.history.push("/checkout")
     }
-    
     
     render(){
         const disabledInfo = {
@@ -90,12 +85,9 @@ class BurgerBuilder extends Component {
             price={this.props.price}/>
         }
         
-
         if(this.state.loading){
             orderSummary = <Spinner/>;
         }    
-
-
 
         return(
             <Aux>
@@ -119,5 +111,4 @@ const mapDispatchToProps = dispatch => {
         onIngredientsRemove: (ingName) => dispatch({type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName})
     }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));
