@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
 import {Route} from "react-router-dom";
 import ContactData from "../Checkout/ContactData/ContactData";
+import { connect } from "reac-redux";
 
 class Checkout extends Component {
    
@@ -29,5 +30,11 @@ class Checkout extends Component {
         );
     }
 }
+const mapStateToProps = state => {
+    return {
+        ings: state.ingredients,
+        price: state.totalPrice
+    }
+}
 
-export default Checkout;
+export default connect(mapStateToProps)(Checkout);
