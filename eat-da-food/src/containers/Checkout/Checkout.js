@@ -4,10 +4,7 @@ import {Route} from "react-router-dom";
 import ContactData from "../Checkout/ContactData/ContactData";
 
 class Checkout extends Component {
-    state={
-        ingredients:null,
-        price:0
-    }
+   
     
     checkoutCancelledHandler=() =>{
         this.props.history.goBack();
