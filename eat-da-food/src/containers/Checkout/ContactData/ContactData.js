@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
+
 import Button from "../../../components/UI/Button/Button";
 import styles from "./ContactData.module.css";
 import axios from "../../../axios";
@@ -101,11 +102,11 @@ class ContactData extends Component {
         for(let formElementIdentifier in this.state.orderForm){
             formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
         }
-        console.log(this.props.ingredients);
+       
         
         this.setState({loading: true});
         const order = {
-            ingredients : this.props.ingredients,
+            ingredients : this.props.ings,
             price : this.props.price, 
             orderData: formData 
         }
