@@ -198,8 +198,9 @@ class ContactData extends Component {
 const mapStateToProps = (state) => {
 
     return{
-        ings: state.ingredients
+        ings: state.ingredients,
+        price: state.totalPrice
     }
 }
 
-export default connect()(ContactData);
+export default connect(mapStateToProps)(ContactData);
