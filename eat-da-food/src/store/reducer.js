@@ -1,6 +1,5 @@
 import * as actionTypes from "./actions";
 
-
 const initialState ={
     ingredients :{
         salad: 0,
