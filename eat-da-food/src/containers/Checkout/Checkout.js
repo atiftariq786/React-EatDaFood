@@ -5,8 +5,7 @@ import ContactData from "../Checkout/ContactData/ContactData";
 import { connect } from "react-redux";
 
 class Checkout extends Component {
-   
-    
+
     checkoutCancelledHandler=() =>{
         this.props.history.goBack();
     }
@@ -20,12 +19,12 @@ class Checkout extends Component {
                 ingredients={this.props.ings }
                 checkoutCancelled={this.checkoutCancelledHandler}
                 checkoutContinue={this.checkoutContinuedHandler}
-                 />
+                />
                 <Route 
                 path={this.props.match.path + "/contact-data"}
                 component = {ContactData}
                 />
-                 
+        
             </div>
         );
     }
